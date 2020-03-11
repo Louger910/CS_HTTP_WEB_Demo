@@ -11,6 +11,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,8 +36,8 @@
     <Reference Include="AngleSharp, Version=0.13.0.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
       <HintPath>..\packages\AngleSharp.0.13.0\lib\net46\AngleSharp.dll</HintPath>
     </Reference>
-    <Reference Include="AngleSharp.Scripting.JavaScript, Version=0.5.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\AngleSharp.Scripting.JavaScript.0.5.1\lib\portable-windows8+net45+windowsphone8+wpa+monoandroid+monotouch\AngleSharp.Scripting.JavaScript.dll</HintPath>
+    <Reference Include="AngleSharp.Js, Version=0.13.0.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.Js.0.13.0\lib\net46\AngleSharp.Js.dll</HintPath>
     </Reference>
     <Reference Include="jint, Version=2.10.4.0, Culture=neutral, PublicKeyToken=2e92ba9c8d81157f, processorArchitecture=MSIL">
       <HintPath>..\packages\jint.2.10.4\lib\net45\jint.dll</HintPath>
