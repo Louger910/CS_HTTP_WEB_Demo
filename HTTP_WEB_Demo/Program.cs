@@ -20,8 +20,9 @@ namespace HTTP_WEB_Demo
             Thread.Sleep(5000);
         }
 
-        async static void DoTask() {
-            
+        async static void DoTask()
+        {
+
             HttpWebRequest reqw =
                 (HttpWebRequest)HttpWebRequest.Create("https://ru.wikipedia.org/wiki/%D0%92%D1%81%D0%BF%D1%8B%D1%88%D0%BA%D0%B0_COVID-19");
             HttpWebResponse resp = (HttpWebResponse)reqw.GetResponse(); //создаем объект отклика
@@ -44,33 +45,47 @@ namespace HTTP_WEB_Demo
                 {
                     try
                     {
-                        if (!item.Children[0].InnerHtml.Contains("Макао"))
+                        //if (!item.Children[0].InnerHtml.Contains("Макао"))
+                        //{
+                        //    totalInfected +=
+                        //    (item.Children[1].InnerHtml != "") ? Int32.Parse(item.Children[1].InnerHtml) : 0;
+                        //    totalDead +=
+                        //        (item.Children[3].InnerHtml != "") ? Int32.Parse(item.Children[3].InnerHtml) : 0;
+                        //    totalRecovered +=
+                        //        (item.Children[4].InnerHtml != "") ? Int32.Parse(item.Children[4].InnerHtml) : 0;
+                        //}
+
+                        if (count <= 10)
                         {
+                            Console.WriteLine(item.Children[1].InnerHtml);
                             totalInfected +=
-                            (item.Children[1].InnerHtml != "") ? Int32.Parse(item.Children[1].InnerHtml) : 0;
+                                (item.Children[1].InnerHtml != "") ? Int32.Parse(item.Children[1].InnerHtml) : 0;
                             totalDead +=
-                                (item.Children[3].InnerHtml != "") ? Int32.Parse(item.Children[3].InnerHtml) : 0;
+                                    (item.Children[3].InnerHtml != "") ? Int32.Parse(item.Children[3].InnerHtml) : 0;
                             totalRecovered +=
                                 (item.Children[4].InnerHtml != "") ? Int32.Parse(item.Children[4].InnerHtml) : 0;
                         }
+
                     }
                     catch (Exception)
                     {
-
                         // throw;
                     }
-                    // Console.WriteLine(item.Children[1].InnerHtml);
-                    // Console.WriteLine();
+
+                    
+
+                    //Console.WriteLine();
                 }
-                
+
                 count++;
             }
-            Console.WriteLine(totalInfected);
-            Console.WriteLine(totalDead);
-            Console.WriteLine(totalRecovered);
+            Console.WriteLine();
+            //Console.WriteLine(totalInfected);
+            //Console.WriteLine(totalDead);
+            //Console.WriteLine(totalRecovered);
 
-            Console.WriteLine(((double)totalDead / (double)totalInfected) * 100d);
-            Console.WriteLine(((double)totalRecovered / (double)totalInfected) * 100d);
+            Console.WriteLine(((double)totalDead / (double)totalInfected) * 100d + " %");
+            Console.WriteLine(((double)totalRecovered / (double)totalInfected) * 100d + " %");
 
             sr.Close();
 
