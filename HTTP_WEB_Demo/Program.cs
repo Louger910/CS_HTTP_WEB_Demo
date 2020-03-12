@@ -57,7 +57,9 @@ namespace HTTP_WEB_Demo
 
                         if (count <= 10)
                         {
+                            Console.Write(item.Children[0].Text() + " ");
                             Console.WriteLine(item.Children[1].InnerHtml);
+                            
                             totalInfected +=
                                 (item.Children[1].InnerHtml != "") ? Int32.Parse(item.Children[1].InnerHtml) : 0;
                             totalDead +=
@@ -65,7 +67,7 @@ namespace HTTP_WEB_Demo
                             totalRecovered +=
                                 (item.Children[4].InnerHtml != "") ? Int32.Parse(item.Children[4].InnerHtml) : 0;
                         }
-
+                        
                     }
                     catch (Exception)
                     {
